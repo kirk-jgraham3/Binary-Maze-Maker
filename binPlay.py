@@ -7,6 +7,7 @@ visited = [[]]
 end = (0,0)
 start = (0,0)
 watch = False
+score = 0
 
 def can_go_up(y,x):
     # check space above for bottom wall
@@ -48,6 +49,8 @@ def print_str(maze_str):
         print()
 
 def move_marker(curr,prev):
+    global score
+    score = score + 1
     m=maze_to_str(maze).split('\n')
     maze_str = []
     for row in m:
@@ -63,17 +66,16 @@ def move_marker(curr,prev):
     print_str(maze_str)
     
 def play():
-    global maze, start, end
+    global maze, start, end, score
+    score = -1
     #initialize position to start
     curr = (start[0], start[1])
     move_marker(curr, (0,0))
+    
     print("Use WASD or Arrow Keys to move")
-    print('Start: '+str(start[0])+','+str(start[1]))
-    print('End: '+str(end[0])+','+str(end[1]))
-    print(can_go_up(start[0],start[1]))
-    print(can_go_down(start[0],start[1]))
-    print(can_go_left(start[0],start[1]))
-    print(can_go_right(start[0],start[1]))
+    print('Start: Y='+str(start[0])+', X='+str(start[1]))
+    print('End: Y='+str(end[0])+', X='+str(end[1]))
+    
     while not curr == end:
         prev = curr
         dir = getkey()
@@ -104,10 +106,12 @@ def play():
         
         move_marker(curr,prev)
         print("Use WASD or Arrow Keys to move")
-        print('Start: '+str(start[0])+','+str(start[1]))
-        print('End: '+str(end[0])+','+str(end[1]))
+        print('Current Pos: Y='+str(curr[0])+', X='+str(curr[1]))
+        print('Start: Y='+str(start[0])+', X='+str(start[1]))
+        print('End: Y='+str(end[0])+', X='+str(end[1]))
         
-    print("You Win!")
+    print("\nYou Win!")
+    print("Score: ", score)
 
 def main():
     os.system('cls')

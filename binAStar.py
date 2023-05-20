@@ -187,6 +187,9 @@ def cpu_play(maze, actions):
         new_state = move_marker(curr,prev,new_state)
         print_str(new_state)
         print(act)
+        print('Current Pos: Y='+str(curr[0])+', X='+str(curr[1]))
+        print('Start: Y='+str(start[0])+', X='+str(start[1]))
+        print('End: Y='+str(end[0])+', X='+str(end[1]))
         time.sleep(0.1)
     print("Done!")
     time.sleep(2)
@@ -221,7 +224,7 @@ def main():
     print('Start: '+str(start[0])+','+str(start[1]))
     print('End: '+str(end[0])+','+str(end[1]))
     print('\nActions found:\n',actions)
-    print('Best Possible Score: ', len(actions))
+    print('\nBest Possible Score: ', len(actions))
     
     watch = input("\nWatch the solution? (y/n) ")
     if watch == 'y' or watch == 'Y':
