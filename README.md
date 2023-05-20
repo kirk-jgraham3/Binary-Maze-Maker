@@ -105,7 +105,7 @@ That should about cover anything of importance regarding the maze and binary con
 There are a couple features that could be implemented differently (or better). 
 However, this program is really designed for my own use and experimenting. Therefore, refactoring for improved efficiency is not a primary focus or concern.  
 
-If I happen across anything I find particularly annoying with the code, I will make impromptu changes.  
+If I happen across anything I find particularly annoying with the code, I will make impromptu changes. Definitely will add at least a marker for the end of the maze at some point.  
 
 At some point, I may want to try out different generation algorithms (such as BFS or Prim's) since the patterns are very interesting.  
 
